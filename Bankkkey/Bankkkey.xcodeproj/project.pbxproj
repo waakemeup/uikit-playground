@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E5893ACA27F48EBF004FD782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5893AC927F48EBF004FD782 /* AppDelegate.swift */; };
-		E5893ACE27F48EBF004FD782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5893ACD27F48EBF004FD782 /* ViewController.swift */; };
+		E5893ACE27F48EBF004FD782 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5893ACD27F48EBF004FD782 /* LoginViewController.swift */; };
 		E5893AD427F48EBF004FD782 /* Bankkkey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5893AD227F48EBF004FD782 /* Bankkkey.xcdatamodeld */; };
 		E5893AD627F48EC4004FD782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5893AD527F48EC4004FD782 /* Assets.xcassets */; };
 		E5893AD927F48EC4004FD782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5893AD727F48EC4004FD782 /* LaunchScreen.storyboard */; };
+		E5893AE327F493BA004FD782 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5893AE227F493BA004FD782 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E5893AC627F48EBF004FD782 /* Bankkkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankkkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5893AC927F48EBF004FD782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5893ACD27F48EBF004FD782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5893ACD27F48EBF004FD782 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5893AD327F48EBF004FD782 /* Bankkkey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bankkkey.xcdatamodel; sourceTree = "<group>"; };
 		E5893AD527F48EC4004FD782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5893AD827F48EC4004FD782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5893ADA27F48EC4004FD782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5893AE227F493BA004FD782 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		E5893AC827F48EBF004FD782 /* Bankkkey */ = {
 			isa = PBXGroup;
 			children = (
+				E5893AE027F492F8004FD782 /* Files */,
+				E5893AE127F49384004FD782 /* Login */,
 				E5893AC927F48EBF004FD782 /* AppDelegate.swift */,
-				E5893ACD27F48EBF004FD782 /* ViewController.swift */,
+			);
+			path = Bankkkey;
+			sourceTree = "<group>";
+		};
+		E5893AE027F492F8004FD782 /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				E5893AD527F48EC4004FD782 /* Assets.xcassets */,
 				E5893AD727F48EC4004FD782 /* LaunchScreen.storyboard */,
 				E5893ADA27F48EC4004FD782 /* Info.plist */,
 				E5893AD227F48EBF004FD782 /* Bankkkey.xcdatamodeld */,
 			);
-			path = Bankkkey;
+			name = Files;
+			sourceTree = "<group>";
+		};
+		E5893AE127F49384004FD782 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E5893ACD27F48EBF004FD782 /* LoginViewController.swift */,
+				E5893AE227F493BA004FD782 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5893ACE27F48EBF004FD782 /* ViewController.swift in Sources */,
+				E5893ACE27F48EBF004FD782 /* LoginViewController.swift in Sources */,
 				E5893AD427F48EBF004FD782 /* Bankkkey.xcdatamodeld in Sources */,
+				E5893AE327F493BA004FD782 /* LoginView.swift in Sources */,
 				E5893ACA27F48EBF004FD782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
