@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50F7E2427F6B83800D06DED /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50F7E2327F6B83800D06DED /* OnboardingContainerViewController.swift */; };
 		E5893ACA27F48EBF004FD782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5893AC927F48EBF004FD782 /* AppDelegate.swift */; };
 		E5893ACE27F48EBF004FD782 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5893ACD27F48EBF004FD782 /* LoginViewController.swift */; };
 		E5893AD427F48EBF004FD782 /* Bankkkey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5893AD227F48EBF004FD782 /* Bankkkey.xcdatamodeld */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E50F7E2327F6B83800D06DED /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		E5893AC627F48EBF004FD782 /* Bankkkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankkkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5893AC927F48EBF004FD782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5893ACD27F48EBF004FD782 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50F7E2227F6B7C800D06DED /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E50F7E2327F6B83800D06DED /* OnboardingContainerViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		E5893ABD27F48EBF004FD782 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		E5893AC827F48EBF004FD782 /* Bankkkey */ = {
 			isa = PBXGroup;
 			children = (
+				E50F7E2227F6B7C800D06DED /* Onboarding */,
 				E5893AE027F492F8004FD782 /* Files */,
 				E5893AE127F49384004FD782 /* Login */,
 				E5893AC927F48EBF004FD782 /* AppDelegate.swift */,
@@ -156,6 +167,7 @@
 				E5893ACE27F48EBF004FD782 /* LoginViewController.swift in Sources */,
 				E5893AD427F48EBF004FD782 /* Bankkkey.xcdatamodeld in Sources */,
 				E5893AE327F493BA004FD782 /* LoginView.swift in Sources */,
+				E50F7E2427F6B83800D06DED /* OnboardingContainerViewController.swift in Sources */,
 				E5893ACA27F48EBF004FD782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
