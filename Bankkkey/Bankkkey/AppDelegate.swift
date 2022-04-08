@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
-        window?.rootViewController = onboardingContainerViewController
+        window?.rootViewController = loginViewController
 //        window?.rootViewController = OnboardingViewController(heroImageName: "delorean", titleText: "Bankeyyy is faster!!! easier to use, and has a brand new look and feel that will make you feel like you are back in 1989.")
 
         return true
