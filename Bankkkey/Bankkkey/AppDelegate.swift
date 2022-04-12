@@ -13,8 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let loginViewController = LoginViewController()
-    
     let onboardingContainerViewController = OnboardingContainerViewController()
+    let dummyViewController = DummyViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -24,24 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
+        dummyViewController.logoutDelegate = self
         
         window?.rootViewController = loginViewController
 //        window?.rootViewController = OnboardingViewController(heroImageName: "delorean", titleText: "Bankeyyy is faster!!! easier to use, and has a brand new look and feel that will make you feel like you are back in 1989.")
 
         return true
-    }
-}
-
-extension AppDelegate:LoginViewControllerDelegate {
-    func didLogin() {
-        setRootViewController(onboardingContainerViewController)
-    }
-}
-
-
-extension AppDelegate:OnboardingContainerViewControllerDelegate {
-    func didFinishOnboarding() {
-        print("foo - Did onboard")
     }
 }
 
@@ -58,3 +46,23 @@ extension AppDelegate {
         UIView.transition(with: window, duration: 0.7, options: .transitionCrossDissolve,animations: nil,completion: nil)
     }
 }
+
+
+extension AppDelegate:LoginViewControllerDelegate {
+    func didLogin() {
+        setRootViewController(onboardingContainerViewController)
+    }
+}
+
+extension AppDelegate:OnboardingContainerViewControllerDelegate {
+    func didFinishOnboarding() {
+        setRootViewController(dummyViewController)
+    }
+}
+
+extension AppDelegate:LogoutDelegate {
+    func didLogout() {
+        setRootViewController(loginViewController)
+    }
+}
+
