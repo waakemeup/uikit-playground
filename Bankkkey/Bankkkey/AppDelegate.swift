@@ -30,10 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingContainerViewController.delegate = self
         dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = mainViewController
+//        window?.rootViewController = mainViewController
 //        window?.rootViewController = OnboardingViewController(heroImageName: "delorean", titleText: "Bankeyyy is faster!!! easier to use, and has a brand new look and feel that will make you feel like you are back in 1989.")
+        window?.rootViewController = AccountSummaryViewController()
         
-        mainViewController.selectedIndex = 1
+        mainViewController.selectedIndex = 0
 
         return true
     }
