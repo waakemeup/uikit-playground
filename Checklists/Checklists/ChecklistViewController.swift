@@ -16,11 +16,13 @@ class ChecklistViewController: UITableViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     
+    navigationController?.navigationBar.prefersLargeTitles = true
+    
     let item1 = ChecklistItem()
-    var item2 = ChecklistItem()
-    var item3 = ChecklistItem()
-    var item4 = ChecklistItem()
-    var item5 = ChecklistItem()
+    let item2 = ChecklistItem()
+    let item3 = ChecklistItem()
+    let item4 = ChecklistItem()
+    let item5 = ChecklistItem()
     
     item1.text = "Walk the dog"
     item2.text = "Hello"
@@ -48,6 +50,13 @@ class ChecklistViewController: UITableViewController {
     configureText(for: cell, with: item)
     configureCheckmark(for: cell, with: item)
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    items.remove(at: indexPath.row)
+    
+    let indexPaths = [indexPath]
+    tableView.deleteRows(at: indexPaths, with: .automatic)
   }
   
   func configureCheckmark(
@@ -78,5 +87,20 @@ class ChecklistViewController: UITableViewController {
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }
+  
+  @IBAction func addItem(){
+    let newRowIndex = items.count
+    
+    let item = ChecklistItem()
+    
+    item.text = "I'm a new Row"
+    items.append(item)
+    
+    let indexPath = IndexPath(row: newRowIndex, section: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRows(at: indexPaths, with: .automatic)
+  }
+  
+  
 }
 
