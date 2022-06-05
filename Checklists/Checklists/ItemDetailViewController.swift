@@ -7,25 +7,38 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate:AnyObject {
-  func addItemViewControllerDidCancel(
-    _ controller:AddItemViewController
+protocol ItemDetailViewControllerDelegate:AnyObject {
+  func itemDetailViewControllerDidCancel(
+    _ controller:ItemDetailViewController
   )
   
-  func addItemViewController(
-    _ controller:AddItemViewController,
+  func itemDetailViewController(
+    _ controller:ItemDetailViewController,
     didFinishAdding item:ChecklistItem
+  )
+  
+  func itemDetailViewController(
+    _ controller:ItemDetailViewController,
+    didFinishEditing item:ChecklistItem
   )
 }
 
-class AddItemViewController: UITableViewController,UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController,UITextFieldDelegate {
   @IBOutlet weak var textField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
   
-  weak var delegate:AddItemViewControllerDelegate?
+  weak var delegate:ItemDetailViewControllerDelegate?
+  var itemToEdit:ChecklistItem?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.largeTitleDisplayMode = .never
+    
+    if let item = itemToEdit {
+      title = "Edit Item"
+      textField.text = item.text
+      doneBarButton.isEnabled = true
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -39,13 +52,18 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
   }
   
   @IBAction func cancel(){
-    delegate?.addItemViewControllerDidCancel(self)
+    delegate?.itemDetailViewControllerDidCancel(self)
   }
   
   @IBAction func done(){
-    let item = ChecklistItem()
-    item.text = textField.text!
-    delegate?.addItemViewController(self, didFinishAdding: item)
+    if let item = itemToEdit {
+      item.text = textField.text!
+      delegate?.itemDetailViewController(self, didFinishEditing: item)
+    } else {
+      let item = ChecklistItem()
+      item.text = textField.text!
+      delegate?.itemDetailViewController(self, didFinishAdding: item)
+    }
   }
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
