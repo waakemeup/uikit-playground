@@ -33,6 +33,9 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
     items.append(item3)
     items.append(item4)
     items.append(item5)
+    
+    print("doucment folder is \(documentsDirectory())")
+    print("Data file path is \(dataFilePath())")
   }
   
   // MARK: - Table View Data Source
@@ -55,6 +58,7 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
     
     let indexPaths = [indexPath]
     tableView.deleteRows(at: indexPaths, with: .automatic)
+    saveCheckListItems()
   }
   
   func configureCheckmark(
@@ -101,6 +105,8 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
     let indexPaths = [indexPath]
     tableView.insertRows(at: indexPaths, with: .automatic)
     navigationController?.popViewController(animated: true)
+    
+    saveCheckListItems()
   }
   
   func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
@@ -111,6 +117,8 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
       }
     }
     navigationController?.popViewController(animated: true)
+    
+    saveCheckListItems()
   }
   
   // MARK: - Navigation
@@ -125,6 +133,32 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
       if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
         controller.itemToEdit = items[indexPath.row]
       }
+    }
+  }
+  
+  func documentsDirectory() -> URL{
+    let paths = FileManager.default.urls(
+      for: .documentDirectory,
+      in: .userDomainMask)
+    return paths[0]
+  }
+  
+  func dataFilePath() -> URL{
+    return documentsDirectory().appendingPathComponent("Checklists.plist")
+  }
+  
+  func saveCheckListItems(){
+    let encoder = PropertyListEncoder()
+    
+    do {
+      let data = try encoder.encode(items)
+      
+      try data.write(
+        to: dataFilePath(),
+        options: Data.WritingOptions.atomic
+      )
+    } catch {
+      print("Error encoding item array: \(error.localizedDescription)")
     }
   }
 }
