@@ -16,26 +16,28 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
     
     navigationController?.navigationBar.prefersLargeTitles = true
     
-    let item1 = ChecklistItem()
-    let item2 = ChecklistItem()
-    let item3 = ChecklistItem()
-    let item4 = ChecklistItem()
-    let item5 = ChecklistItem()
+//    let item1 = ChecklistItem()
+//    let item2 = ChecklistItem()
+//    let item3 = ChecklistItem()
+//    let item4 = ChecklistItem()
+//    let item5 = ChecklistItem()
+//
+//    item1.text = "Walk the dog"
+//    item2.text = "Hello"
+//    item3.text = "Write TypeScript"
+//    item4.text = "Write Swift"
+//    item5.text = "Watch WWDC"
+//
+//    items.append(item1)
+//    items.append(item2)
+//    items.append(item3)
+//    items.append(item4)
+//    items.append(item5)
+//
+//    print("doucment folder is \(documentsDirectory())")
+//    print("Data file path is \(dataFilePath())")
     
-    item1.text = "Walk the dog"
-    item2.text = "Hello"
-    item3.text = "Write TypeScript"
-    item4.text = "Write Swift"
-    item5.text = "Watch WWDC"
-    
-    items.append(item1)
-    items.append(item2)
-    items.append(item3)
-    items.append(item4)
-    items.append(item5)
-    
-    print("doucment folder is \(documentsDirectory())")
-    print("Data file path is \(dataFilePath())")
+    loadChecklistItems()
   }
   
   // MARK: - Table View Data Source
@@ -90,6 +92,7 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
       configureCheckmark(for: cell, with: item)
     }
     tableView.deselectRow(at: indexPath, animated: true)
+    saveCheckListItems()
   }
   
   // MARK: - Add Item ViewController Delegate
@@ -159,6 +162,22 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
       )
     } catch {
       print("Error encoding item array: \(error.localizedDescription)")
+    }
+  }
+  
+  func loadChecklistItems(){
+    let path = dataFilePath()
+    
+    if let data = try? Data(contentsOf: path) {
+      let decoder = PropertyListDecoder()
+      
+      do {
+        items = try decoder.decode(
+          [ChecklistItem].self,
+          from:   data)
+      } catch {
+        print("Error decoding item array: \(error.localizedDescription)")
+      }
     }
   }
 }
