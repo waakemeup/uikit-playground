@@ -7,10 +7,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklists-->
+        <!--All Lists-->
+        <scene sceneID="cvX-mj-QeK">
+            <objects>
+                <tableViewController id="MZb-5N-UiA" userLabel="All Lists" customClass="AllListsViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="L8G-Nc-aXf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="MZb-5N-UiA" id="DjN-X4-wIM"/>
+                            <outlet property="delegate" destination="MZb-5N-UiA" id="LVQ-4E-Zmz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" id="2fU-PY-rMn"/>
+                    <connections>
+                        <segue destination="hlq-97-wU9" kind="show" identifier="ShowChecklist" id="MdM-nG-DTl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SII-mX-57s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338" y="-821"/>
+        </scene>
+        <!--Checklist-->
         <scene sceneID="qfV-5J-pnN">
             <objects>
-                <tableViewController id="hlq-97-wU9" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hlq-97-wU9" userLabel="Checklist" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="onq-OA-tbW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +79,7 @@
                             <outlet property="delegate" destination="hlq-97-wU9" id="SPe-2q-26p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="UbB-pK-vFw">
+                    <navigationItem key="navigationItem" title="(Name of the Checklist)" id="UbB-pK-vFw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DtA-Cc-xC9">
                             <connections>
                                 <segue destination="6Ah-FL-PRm" kind="show" identifier="AddItem" id="KzD-fZ-UOc"/>
@@ -145,7 +167,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hlq-97-wU9" kind="relationship" relationship="rootViewController" id="188-Bi-ich"/>
+                        <segue destination="MZb-5N-UiA" kind="relationship" relationship="rootViewController" id="5EP-oT-V8m"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K8-la-jmr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
