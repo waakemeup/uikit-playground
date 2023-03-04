@@ -68,6 +68,7 @@ extension LoginViewController {
     titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
     titleLabel.adjustsFontForContentSizeCategory = true
     titleLabel.text = "Bankey"
+    titleLabel.alpha = 0
     
     subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
     subtitleLabel.textAlignment = .center
@@ -75,6 +76,7 @@ extension LoginViewController {
     subtitleLabel.adjustsFontForContentSizeCategory = true
     subtitleLabel.numberOfLines = 0
     subtitleLabel.text = "Your premium source for all things banking!"
+    subtitleLabel.alpha = 0
     
     
     loginView.translatesAutoresizingMaskIntoConstraints = false
@@ -191,18 +193,27 @@ extension LoginViewController {
 
 extension LoginViewController {
   private func animate(){
-    let animator1 = UIViewPropertyAnimator(duration: 4, curve: .easeInOut) {
+    let duration = 0.8
+    
+    let animator1 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
       self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
 //      self.subtitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
       self.view.layoutIfNeeded()
     }
     animator1.startAnimation()
     
-    let animator2 = UIViewPropertyAnimator(duration: 4, curve: .easeInOut) {
+    let animator2 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
       self.subtitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
       self.view.layoutIfNeeded()
     }
+    animator2.startAnimation(afterDelay: 0.2)
     
-    animator2.startAnimation(afterDelay: 1)
+    let animator3 = UIViewPropertyAnimator(duration: duration*2, curve: .easeInOut){
+      self.titleLabel.alpha = 1
+      self.subtitleLabel.alpha = 1
+      self.view.layoutIfNeeded()
+    }
+    animator3.startAnimation(afterDelay:0.2)
+  
   }
 }
