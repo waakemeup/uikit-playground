@@ -8,6 +8,7 @@
 import UIKit
 
 class EventListViewController: UIViewController {
+  
   static func instantiate() -> EventListViewController {
     let storyBoard = UIStoryboard(name: "Main",bundle: .main)
     let controller = storyBoard.instantiateViewController(withIdentifier: "EventListViewController") as! EventListViewController
