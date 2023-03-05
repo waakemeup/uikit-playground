@@ -18,6 +18,11 @@
 		E555447E29B301760081C500 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555447D29B301760081C500 /* UIColor+Extensions.swift */; };
 		E5F0EB1029B4A5930058155D /* EventsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB0E29B4A5930058155D /* EventsApp.xcdatamodeld */; };
 		E5F0EB1229B4A6520058155D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB1129B4A6520058155D /* CoreDataManager.swift */; };
+		E5F0EB1429B4AC710058155D /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB1329B4AC710058155D /* EventListViewModel.swift */; };
+		E5F0EB1629B4ADFF0058155D /* AddEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB1529B4ADFF0058155D /* AddEventCoordinator.swift */; };
+		E5F0EB1829B4B2C20058155D /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB1729B4B2C20058155D /* AddEventViewController.swift */; };
+		E5F0EB1A29B4B3760058155D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB1929B4B3760058155D /* UIViewController+Extensions.swift */; };
+		E5F0EB1C29B4B48A0058155D /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0EB1B29B4B48A0058155D /* AddEventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		E555447D29B301760081C500 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		E5F0EB0F29B4A5930058155D /* EventsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsApp.xcdatamodel; sourceTree = "<group>"; };
 		E5F0EB1129B4A6520058155D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E5F0EB1329B4AC710058155D /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		E5F0EB1529B4ADFF0058155D /* AddEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventCoordinator.swift; sourceTree = "<group>"; };
+		E5F0EB1729B4B2C20058155D /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		E5F0EB1929B4B3760058155D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E5F0EB1B29B4B48A0058155D /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,7 @@
 		E555446229B2F5EC0081C500 /* UIkit_MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				E5F0EB1D29B4D0400058155D /* ViewModel */,
 				E5F0EB0D29B4A5150058155D /* Coordinators */,
 				E5F0EB0C29B4A50B0058155D /* Controllers */,
 				E5F0EB0B29B4A4EE0058155D /* Extensions */,
@@ -85,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				E555447D29B301760081C500 /* UIColor+Extensions.swift */,
+				E5F0EB1929B4B3760058155D /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -93,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				E555447B29B2F9810081C500 /* EventListViewController.swift */,
+				E5F0EB1729B4B2C20058155D /* AddEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,8 +115,18 @@
 			children = (
 				E555447729B2F6190081C500 /* AppCoordinator.swift */,
 				E555447929B2F8B50081C500 /* EventListCoordinator.swift */,
+				E5F0EB1529B4ADFF0058155D /* AddEventCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		E5F0EB1D29B4D0400058155D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E5F0EB1329B4AC710058155D /* EventListViewModel.swift */,
+				E5F0EB1B29B4B48A0058155D /* AddEventViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +203,14 @@
 				E555447829B2F6190081C500 /* AppCoordinator.swift in Sources */,
 				E555447C29B2F9810081C500 /* EventListViewController.swift in Sources */,
 				E555446429B2F5EC0081C500 /* AppDelegate.swift in Sources */,
+				E5F0EB1C29B4B48A0058155D /* AddEventViewModel.swift in Sources */,
 				E5F0EB1029B4A5930058155D /* EventsApp.xcdatamodeld in Sources */,
+				E5F0EB1A29B4B3760058155D /* UIViewController+Extensions.swift in Sources */,
 				E555447E29B301760081C500 /* UIColor+Extensions.swift in Sources */,
+				E5F0EB1629B4ADFF0058155D /* AddEventCoordinator.swift in Sources */,
 				E5F0EB1229B4A6520058155D /* CoreDataManager.swift in Sources */,
+				E5F0EB1829B4B2C20058155D /* AddEventViewController.swift in Sources */,
+				E5F0EB1429B4AC710058155D /* EventListViewModel.swift in Sources */,
 				E555446629B2F5EC0081C500 /* SceneDelegate.swift in Sources */,
 				E555447A29B2F8B50081C500 /* EventListCoordinator.swift in Sources */,
 			);
